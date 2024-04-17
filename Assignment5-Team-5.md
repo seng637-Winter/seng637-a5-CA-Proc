@@ -2,9 +2,8 @@
 
 **Lab. Report \#5 – Software Reliability Assessment**
 
-| Group \#:       |
+| Group \#:  5     |
 |-----------------|
-| Student Names:  |
 | Christopher Proc| 
 | Sean Buchanan|
 | Chris Brunet| 
@@ -15,7 +14,7 @@ The goal of this lab is to assess a theoretical System Under Test (SUT) by analy
 # Assessment Using Reliability Growth Testing 
 
 ### Tool Choice
-For reliability Growth Testing, we ended up using CASRE to analyze the failure data. Of all of the tools that we attempted to use, it was the only one which we were able to make work (with great difficulty, given the poor documentation). CASRE required us to install DOSBOX, install and run it in compatibility mode for Windows 3.0. We ended up converting the failure data into a .DAT file using the format included in the CASRE documentation, and it is included in the github repository as Failures.DAT
+For reliability Growth Testing, we ended up using CASRE to analyze the trends in the failure data. Of the tools that we attempted to use for this purpose, it was the only one which we were able to make work. CASRE required us to install DOSBOX, install and run it in compatibility mode for Windows 3.0. We ended up converting the failure data into a .DAT file using the format included in the CASRE documentation, and it is included in the github repository as Failures.DAT
 
 The SRTAT tool that was included in the assignment was able to run after considerable troubleshooting of the java classpath, but when we attempted to use the software on the failure data, most of the models threw internal java errors and/or crashed the program. It also failed to include any usable documentation for setting up the data input files necessary to run them.
 
@@ -26,7 +25,9 @@ C-SFRAT ended up being the only working solution out of the available tools in o
 Using CASRE, we wanted to conduct trend analysis to determine if the SUT was exhibiting reliability growth. 
 
 CASRE's criteria for reliability growth with a 5% significance is a y value less than ~-1.65
+
 CASRE's criteria for reliability decrease with a 5% significance is a y value greater than ~1.65
+
 CASRE considers there to be no trend in the data if |y| is less than 1.95.
 
 
@@ -50,7 +51,7 @@ Based on the above results, we would choose to exclude intervals 0-3 from our da
 
 Unfortunately, the data provided in the failure-dataset was in the format of Failure Counts, but did not have equal test intervals. According to the CASRE documentation, this is a REQUIREMENT in order for these two tests to be valid. 
 
-Therefore, we had to combine the test data into intervals of roughly equal time, in order to re-run the tests in order to be valid. 
+Therefore, we had to combine the test data into intervals of roughly equal time, in order to re-run the tests in order to be valid. This data is included in the repository as Failures-Equal-Time.DAT
 
 The new Laplace test on equal interval data is shown below.
 
